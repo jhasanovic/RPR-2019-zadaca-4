@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.input.KeyCodeCombination?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@/css/korisnici.css" />
    </stylesheets>
@@ -37,21 +27,21 @@
    </rowConstraints>
    <children>
       <ListView fx:id="listKorisnici" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2" GridPane.rowSpan="5" />
-      <Label text="Ime: " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="ime" text="%first_name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <TextField fx:id="fldIme" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Label text="Prezime:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="prezime" text="%last_name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <TextField fx:id="fldPrezime" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label text="E-mail:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <TextField fx:id="fldEmail" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Label text="Korisničko ime:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label fx:id="username" text="%username" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       <TextField fx:id="fldUsername" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Label text="Lozinka:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label fx:id="lozinka" text="%password" GridPane.columnIndex="1" GridPane.rowIndex="6" />
       <PasswordField fx:id="fldPassword" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="7">
          <buttons>
-            <Button fx:id="btnObrisi" mnemonicParsing="false" onAction="#btnObrisiClick" text="Obriši" />
-            <Button fx:id="btnDodaj" mnemonicParsing="false" onAction="#dodajAction" text="Dodaj" />
-            <Button fx:id="btnKraj" cancelButton="true" mnemonicParsing="false" onAction="#krajAction" text="Kraj" />
+            <Button fx:id="btnObrisi" mnemonicParsing="false" onAction="#btnObrisiClick" text="%delete" />
+            <Button fx:id="btnDodaj" mnemonicParsing="false" onAction="#dodajAction" text="%add" />
+            <Button fx:id="btnKraj" cancelButton="true" mnemonicParsing="false" onAction="#krajAction" text="%end" />
          </buttons>
       </ButtonBar>
       <MenuBar prefHeight="26.0" prefWidth="254.0" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
@@ -68,11 +58,11 @@
                      </accelerator></MenuItem>
                   <Menu text="_Language">
                      <items>
-                        <MenuItem text="_Bosanski">
+                        <MenuItem fx:id="btnBS" onAction="#btnBsClick" text="_Bosanski">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>
-                        <MenuItem text="_English">
+                        <MenuItem fx:id="btnEN" onAction="#btnEnClick" text="_English">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>
@@ -92,7 +82,7 @@
             </Menu>
             <Menu text="_Help">
                <items>
-                  <MenuItem text="_About">
+                  <MenuItem fx:id="aboutMenuItem" onAction="#aboutClick" text="_About">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>

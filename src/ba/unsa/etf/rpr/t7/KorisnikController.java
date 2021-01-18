@@ -5,12 +5,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+import static javafx.stage.Window.getWindows;
 
 public class KorisnikController {
     public TextField fldIme;
@@ -19,7 +23,23 @@ public class KorisnikController {
     public TextField fldUsername;
     public ListView<Korisnik> listKorisnici;
     public PasswordField fldPassword;
+    @FXML
+    private Label ime;
+    @FXML
+    private Label prezime;
+    @FXML
+    private Label username;
+    @FXML
+    private Label lozinka;
+    @FXML
+    private Button btnObrisi;
+    @FXML
+    private Button btnDodaj;
+    @FXML
+    private Button btnKraj;
 
+    private Locale locale;
+    private ResourceBundle bundle;
     private KorisniciModel model;
 
     public KorisnikController(KorisniciModel model) {
@@ -126,13 +146,37 @@ public class KorisnikController {
 
     public void exitClick(ActionEvent actionEvent) { System.exit(0); }
 
-    public void aboutClick(ActionEvent actionEvent){
+    public void aboutClick(ActionEvent actionEvent) throws IOException {
         Stage stage=new Stage();
         Parent root= FXMLLoader.load(getClass().getResource("/fxml/about.fxml"));
         stage.setTitle("About");
         stage.setScene(new Scene(root,USE_COMPUTED_SIZE,USE_COMPUTED_SIZE));
         stage.setResizable(false);
         stage.show();
+    }
+    public void btnBsClick(ActionEvent actionEvent){
+    locale=new Locale("bs");
+    bundle=ResourceBundle.getBundle("Translation_bs",locale);
+    ime.setText(bundle.getString("first_name"));
+    prezime.setText(bundle.getString("last_name"));
+    username.setText(bundle.getString("username"));
+    lozinka.setText(bundle.getString("password"));
+    btnDodaj.setText(bundle.getString("add"));
+    btnObrisi.setText(bundle.getString("delete"));
+    btnKraj.setText(bundle.getString("end"));
+
+    }
+    public void btnEnClick(ActionEvent actionEvent){
+    locale=new Locale("en","US");
+        bundle=ResourceBundle.getBundle("Translation_en_US",locale);
+        ime.setText(bundle.getString("first_name"));
+        prezime.setText(bundle.getString("last_name"));
+        username.setText(bundle.getString("username"));
+        lozinka.setText(bundle.getString("password"));
+        btnDodaj.setText(bundle.getString("add"));
+        btnObrisi.setText(bundle.getString("delete"));
+        btnKraj.setText(bundle.getString("end"));
+
     }
 
 }

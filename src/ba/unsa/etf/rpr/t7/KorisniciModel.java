@@ -204,8 +204,6 @@ public class KorisniciModel {
         catch(SQLException throwables){
             throwables.printStackTrace();
         }
-
-
         return rezultat;
     }
 }

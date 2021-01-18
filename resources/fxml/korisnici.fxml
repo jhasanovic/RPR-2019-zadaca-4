@@ -27,21 +27,21 @@
    </rowConstraints>
    <children>
       <ListView fx:id="listKorisnici" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2" GridPane.rowSpan="5" />
-      <Label text="Ime: " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="ime" text="%first_name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <TextField fx:id="fldIme" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Label text="Prezime:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="prezime" text="%last_name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <TextField fx:id="fldPrezime" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <Label text="E-mail:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
       <TextField fx:id="fldEmail" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Label text="Korisničko ime:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label fx:id="username" text="%username" GridPane.columnIndex="1" GridPane.rowIndex="5" />
       <TextField fx:id="fldUsername" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Label text="Lozinka:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label fx:id="lozinka" text="%password" GridPane.columnIndex="1" GridPane.rowIndex="6" />
       <PasswordField fx:id="fldPassword" GridPane.columnIndex="2" GridPane.rowIndex="6" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="7">
          <buttons>
-            <Button fx:id="btnObrisi" mnemonicParsing="false" onAction="#btnObrisiClick" text="Obriši" />
-            <Button fx:id="btnDodaj" mnemonicParsing="false" onAction="#dodajAction" text="Dodaj" />
-            <Button fx:id="btnKraj" cancelButton="true" mnemonicParsing="false" onAction="#krajAction" text="Kraj" />
+            <Button fx:id="btnObrisi" mnemonicParsing="false" onAction="#btnObrisiClick" text="%delete" />
+            <Button fx:id="btnDodaj" mnemonicParsing="false" onAction="#dodajAction" text="%add" />
+            <Button fx:id="btnKraj" cancelButton="true" mnemonicParsing="false" onAction="#krajAction" text="%end" />
          </buttons>
       </ButtonBar>
       <MenuBar prefHeight="26.0" prefWidth="254.0" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
@@ -58,11 +58,11 @@
                      </accelerator></MenuItem>
                   <Menu text="_Language">
                      <items>
-                        <MenuItem text="_Bosanski">
+                        <MenuItem fx:id="btnBS" onAction="#btnBsClick" text="_Bosanski">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>
-                        <MenuItem text="_English">
+                        <MenuItem fx:id="btnEN" onAction="#btnEnClick" text="_English">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>

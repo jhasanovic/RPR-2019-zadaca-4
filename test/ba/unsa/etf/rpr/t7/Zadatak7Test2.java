@@ -33,8 +33,9 @@ public class Zadatak7Test2 {
         model.vratiNaDefault();
         model.napuni();
         KorisnikController ctrl = new KorisnikController(model);
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnici.fxml"), bundle);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/korisnici.fxml"));
         loader.setController(ctrl);
         Parent root = loader.load();
         stage.setTitle("Korisnici");
