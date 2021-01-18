@@ -2,9 +2,15 @@ package ba.unsa.etf.rpr.t7;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class KorisnikController {
     public TextField fldIme;
@@ -114,4 +120,19 @@ public class KorisnikController {
     public void krajAction(ActionEvent actionEvent) {
         System.exit(0);
     }
+
+    public void btnObrisiClick(ActionEvent actionEvent) {
+    }
+
+    public void exitClick(ActionEvent actionEvent) { System.exit(0); }
+
+    public void aboutClick(ActionEvent actionEvent){
+        Stage stage=new Stage();
+        Parent root= FXMLLoader.load(getClass().getResource("/fxml/about.fxml"));
+        stage.setTitle("About");
+        stage.setScene(new Scene(root,USE_COMPUTED_SIZE,USE_COMPUTED_SIZE));
+        stage.setResizable(false);
+        stage.show();
+    }
+
 }
