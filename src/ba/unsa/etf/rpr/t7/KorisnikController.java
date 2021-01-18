@@ -37,6 +37,20 @@ public class KorisnikController {
     private Button btnDodaj;
     @FXML
     private Button btnKraj;
+    @FXML
+    private MenuItem aboutMenuItem;
+    @FXML
+    private MenuItem helpItem;
+    @FXML
+    private MenuItem exitMenuBtn;
+    @FXML
+    private MenuItem langItem;
+    @FXML
+    private MenuItem saveItem;
+    @FXML
+    private MenuItem printItem;
+    @FXML
+    private MenuItem fileItem;
 
     private Locale locale;
     private ResourceBundle bundle;
@@ -162,7 +176,13 @@ public class KorisnikController {
     btnDodaj.setText(bundle.getString("add"));
     btnObrisi.setText(bundle.getString("delete"));
     btnKraj.setText(bundle.getString("end"));
-
+        aboutMenuItem.setText(bundle.getString("about"));
+        helpItem.setText(bundle.getString("help"));
+        exitMenuBtn.setText(bundle.getString("exit"));
+        langItem.setText(bundle.getString("language"));
+        saveItem.setText(bundle.getString("save"));
+        printItem.setText(bundle.getString("print"));
+        fileItem.setText(bundle.getString("file"));
     }
     public void btnEnClick(ActionEvent actionEvent){
     locale=new Locale("en","US");
@@ -174,6 +194,13 @@ public class KorisnikController {
         btnDodaj.setText(bundle.getString("add"));
         btnObrisi.setText(bundle.getString("delete"));
         btnKraj.setText(bundle.getString("end"));
+        aboutMenuItem.setText(bundle.getString("about"));
+        helpItem.setText(bundle.getString("help"));
+        exitMenuBtn.setText(bundle.getString("exit"));
+        langItem.setText(bundle.getString("language"));
+        saveItem.setText(bundle.getString("save"));
+        printItem.setText(bundle.getString("print"));
+        fileItem.setText(bundle.getString("file"));
 
     }
 

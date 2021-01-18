@@ -46,17 +46,17 @@
       </ButtonBar>
       <MenuBar prefHeight="26.0" prefWidth="254.0" GridPane.columnSpan="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="NEVER">
          <menus>
-            <Menu text="_File">
+            <Menu fx:id="fileItem" text="%file">
                <items>
-                  <MenuItem text="_Print">
+                  <MenuItem fx:id="printItem" text="%print">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem text="_Save">
+                  <MenuItem fx:id="saveItem" text="%save">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <Menu text="_Language">
+                  <Menu fx:id="langItem" text="%language">
                      <items>
                         <MenuItem fx:id="btnBS" onAction="#btnBsClick" text="_Bosanski">
                            <accelerator>
@@ -71,7 +71,7 @@
                         <KeyCodeCombination alt="DOWN" code="L" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </Menu>
-                  <MenuItem fx:id="exitMenuBtn" onAction="#exitClick" text="E_xit">
+                  <MenuItem fx:id="exitMenuBtn" onAction="#exitClick" text="%exit">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -80,9 +80,9 @@
                   <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
                </accelerator>
             </Menu>
-            <Menu text="_Help">
+            <Menu fx:id="helpItem" text="%help">
                <items>
-                  <MenuItem fx:id="aboutMenuItem" onAction="#aboutClick" text="_About">
+                  <MenuItem fx:id="aboutMenuItem" onAction="#aboutClick" text="%about">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
