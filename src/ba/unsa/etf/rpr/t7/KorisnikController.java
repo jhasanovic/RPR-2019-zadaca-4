@@ -48,8 +48,6 @@ public class KorisnikController {
 
     @FXML
     public void initialize() {
-        //model=KorisniciModel.getInstance();
-        //listKorisnici.setItems(model.sviKorisnici());
         listKorisnici.setItems(model.getKorisnici());
         listKorisnici.getSelectionModel().selectedItemProperty().addListener((obs, oldKorisnik, newKorisnik) -> {
             model.setTrenutniKorisnik(newKorisnik);
