@@ -22,6 +22,8 @@ public class KorisnikController {
 
     @FXML
     public void initialize() {
+        //model=KorisniciModel.getInstance();
+        //listKorisnici.setItems(model.sviKorisnici());
         listKorisnici.setItems(model.getKorisnici());
         listKorisnici.getSelectionModel().selectedItemProperty().addListener((obs, oldKorisnik, newKorisnik) -> {
             model.setTrenutniKorisnik(newKorisnik);
@@ -35,6 +37,7 @@ public class KorisnikController {
                 fldEmail.textProperty().unbindBidirectional(oldKorisnik.emailProperty() );
                 fldUsername.textProperty().unbindBidirectional(oldKorisnik.usernameProperty() );
                 fldPassword.textProperty().unbindBidirectional(oldKorisnik.passwordProperty() );
+                model.izmijeni(oldKorisnik);
             }
             if (newKorisnik == null) {
                 fldIme.setText("");

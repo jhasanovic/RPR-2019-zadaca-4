@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.t7;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Korisnik {
+    private int id;
     private SimpleStringProperty ime, prezime, email, username, password;
 
     public Korisnik(String ime, String prezime, String email, String username, String password) {
@@ -78,5 +79,11 @@ public class Korisnik {
         this.password.set(password);
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public int getId() {
+        return id;
+    }
 }
